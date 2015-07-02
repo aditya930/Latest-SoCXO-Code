@@ -12,7 +12,7 @@ Public string getmetoken(string s,string url)
     req.setBody(s);
     req.setEndpoint(url);
     system.debug('Request1'+req);
-    system.debug('Token reponse is:::'+s);
+    system.debug('Token reponse is++++'+s);
     try {
            res = ht.send(req);
            string postbody=res.getBody();
