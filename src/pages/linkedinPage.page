@@ -1,0 +1,12 @@
+<apex:page showHeader="false" sidebar="false" controller="linkedinIntegrationController" action="{!linkedinUserDetails}">
+    <script>
+        function redirect(){
+        window.location.href = '/apex/paneltest002';
+        }
+    </script>
+    
+    Successfully Connected to Linkedin!
+    Please go to the Blurb Page to post your blurbs!
+    <!--<button onclick="redirect()">GO</button>-->
+    <button onclick="window.close();">GO</button>
+</apex:page>

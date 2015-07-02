@@ -1,0 +1,2 @@
+<apex:page Controller="validateUserController" action="{!Redir}" tabstyle="Blurbs_Page__tab"> 
+</apex:page>

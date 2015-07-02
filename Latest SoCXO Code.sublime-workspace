@@ -1,0 +1,912 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"se",
+				"setBody"
+			],
+			[
+				"Test",
+				"TestCallouts"
+			],
+			[
+				"is",
+				"isRunningTest"
+			],
+			[
+				"re",
+				"response1"
+			],
+			[
+				"soc",
+				"socxoApiHandler"
+			],
+			[
+				"sty",
+				"style	Tag"
+			],
+			[
+				"Http",
+				"HttpResponse"
+			],
+			[
+				"auth",
+				"authController"
+			],
+			[
+				"aur",
+				"authController"
+			],
+			[
+				"cl",
+				"class"
+			],
+			[
+				"test",
+				"testSocxoToken"
+			],
+			[
+				"sele",
+				"selectall"
+			],
+			[
+				"check",
+				"checkCount"
+			],
+			[
+				"style",
+				"styleClass"
+			],
+			[
+				"rnage",
+				"rangeFrom"
+			],
+			[
+				"dta",
+				"dateFilterQuery"
+			],
+			[
+				"L",
+				"LineItemWrapper"
+			],
+			[
+				"tra",
+				"trackingNumber"
+			],
+			[
+				"Sh",
+				"ShipmentSearchController"
+			],
+			[
+				"in",
+				"INSERT"
+			],
+			[
+				"sle",
+				"selectAllCheckbox"
+			],
+			[
+				"che",
+				"checkCount"
+			],
+			[
+				"chec",
+				"checkedArr"
+			],
+			[
+				"s",
+				"selectall"
+			],
+			[
+				"Excep",
+				"NullPointerException	[Standard Apex Class]"
+			],
+			[
+				"err",
+				"error_description"
+			],
+			[
+				"logi",
+				"loginError"
+			],
+			[
+				"a",
+				"alert"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"t",
+				"target	Attr"
+			],
+			[
+				"onc",
+				"onclick	Attr"
+			],
+			[
+				"ap",
+				"apex"
+			],
+			[
+				"rese",
+				"resetButton"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"class",
+				"classname"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"video",
+				"videoplayer"
+			],
+			[
+				"ppt",
+				"pptVideoUrlMap"
+			],
+			[
+				"slide",
+				"slideArray"
+			],
+			[
+				"curr",
+				"currentSlide1"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"showpo",
+				"showPopup1"
+			],
+			[
+				"link",
+				"linkedinStatus"
+			],
+			[
+				"linke",
+				"linkedinMessage"
+			],
+			[
+				"lin",
+				"linkedinStatus"
+			],
+			[
+				"line",
+				"linkedinMessage"
+			],
+			[
+				"JSON",
+				"JSONParser"
+			],
+			[
+				"Htt",
+				"HttpResponse"
+			],
+			[
+				"set",
+				"setMethod"
+			],
+			[
+				"b",
+				"blurbids"
+			],
+			[
+				"Acces",
+				"Access_Token__c"
+			],
+			[
+				"category",
+				"categoryendpoint"
+			],
+			[
+				"user",
+				"userinfo"
+			],
+			[
+				"SO",
+				"SOCXO_Service__r"
+			],
+			[
+				"SCO",
+				"getStatusCode"
+			],
+			[
+				"So",
+				"SOCXO_token__c"
+			],
+			[
+				"toke",
+				"tokensecret"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"twitter",
+				"twittermap"
+			],
+			[
+				"twittertoken",
+				"twittertokensecret"
+			],
+			[
+				"twitte",
+				"twittertokensecret"
+			],
+			[
+				"twittercon",
+				"twitterconnect"
+			],
+			[
+				"HTT",
+				"HttpResponse"
+			],
+			[
+				"auh",
+				"authCodeUrl"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"verifier",
+				"verifier_body"
+			],
+			[
+				"Tw",
+				"TwitterDetails"
+			],
+			[
+				"twitt",
+				"twitterstatus"
+			],
+			[
+				"tw",
+				"twitteraccesstoken"
+			],
+			[
+				"Acc",
+				"Access_Token__c"
+			],
+			[
+				"par",
+				"par1"
+			],
+			[
+				"twit",
+				"twitterbody"
+			],
+			[
+				"xfb",
+				"xfb1"
+			],
+			[
+				"call",
+				"callbackurl1"
+			],
+			[
+				"uti",
+				"utilityclass"
+			],
+			[
+				"ut",
+				"utilityclass"
+			],
+			[
+				"pageR",
+				"PageReference"
+			],
+			[
+				"pagere",
+				"pagereference"
+			],
+			[
+				"twi",
+				"twitter_token"
+			],
+			[
+				"JOSN",
+				"JSON"
+			],
+			[
+				"header",
+				"headerValue"
+			],
+			[
+				"Ht",
+				"HttpRequest"
+			],
+			[
+				"page",
+				"pageSize"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"con",
+				"Contact"
+			],
+			[
+				"lst",
+				"lstLead"
+			],
+			[
+				"new",
+				"newLead"
+			],
+			[
+				"testQ",
+				"testQuoteLineItem"
+			],
+			[
+				"testCon",
+				"testContactRole"
+			],
+			[
+				"Con",
+				"ContactId"
+			],
+			[
+				"Prod",
+				"Product2id"
+			],
+			[
+				"de",
+				"debug"
+			],
+			[
+				"pa",
+				"pageRef2"
+			],
+			[
+				"testQuote",
+				"testQuoteNew"
+			],
+			[
+				"testq",
+				"testQuoteNew1"
+			],
+			[
+				"testQu",
+				"testQuoteNew1"
+			],
+			[
+				"tes",
+				"testOpportunity"
+			],
+			[
+				"A",
+				"AccountID"
+			],
+			[
+				"Opp",
+				"Opportunity"
+			],
+			[
+				"O",
+				"Opportunity"
+			],
+			[
+				"Account",
+				"AccountID"
+			],
+			[
+				"S",
+				"SELECT"
+			],
+			[
+				"Oppo",
+				"OpportunityID"
+			],
+			[
+				"Op",
+				"OppID"
+			],
+			[
+				"IS",
+				"IsPrimary"
+			],
+			[
+				"testPr",
+				"testPriceBook2"
+			],
+			[
+				"I",
+				"IsPrimary"
+			],
+			[
+				"testCont",
+				"testContactRole"
+			],
+			[
+				"testAccou",
+				"testAccount"
+			],
+			[
+				"tets",
+				"testQuote"
+			],
+			[
+				"opp",
+				"opportunityRef"
+			],
+			[
+				"Opo",
+				"OpportunityID"
+			],
+			[
+				"Ema",
+				"Email__c"
+			],
+			[
+				"Las",
+				"Last_Name__c"
+			],
+			[
+				"F",
+				"First_Name__c"
+			],
+			[
+				"pr",
+				"prospectID"
+			],
+			[
+				"App",
+				"Application"
+			],
+			[
+				"J",
+				"Job_Application__c"
+			],
+			[
+				"Rout",
+				"Route_Outlet__c"
+			],
+			[
+				"ls",
+				"lstRouteOutlet"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Projects/Sublime/Latest SoCXO Code"
+	],
+	"file_history":
+	[
+		"/E/Projects/Sublime/SoCXO/src/pages/SOCXOmainPage.page",
+		"/E/Projects/Sublime/DeveloperSoCXO/src/pages/SOCXOmainPage.page",
+		"/E/Projects/RealD/New Code/apex class.java",
+		"/E/Projects/RealD/New Code/vf page.html",
+		"/E/Projects/RealD/New Code/ShipmentCompletionControllerTest1.java",
+		"/E/Projects/RealD/Code Backup/Apex.java",
+		"/C/Users/amohandasan/Desktop/reald backup code/reald backup code/controllerclass.java",
+		"/E/Projects/RealD/Code Backup/VF.html",
+		"/E/Projects/Sublime/TestenvSoCXO/src/classes/AuthControllerforproduct.cls",
+		"/E/Projects/RealD/Code/ShipmentSearchController_test",
+		"/E/Projects/RealD/Code/ShipmentSearchpage_test",
+		"/E/Projects/RealD/Code/CallResultSettings.java",
+		"/E/Projects/RealD/Code/ShipmentSearchpage_first_edit.html",
+		"/E/Projects/RealD/Code/DatatableSortControllerpage_mathew.html",
+		"/E/Projects/RealD/Code/DatatableSortController_mathew.java",
+		"/E/Projects/RealD/Code/ShipmentSearchController_first_edit.java",
+		"/E/Projects/RealD/Code/ShipmentSearchPage.html",
+		"/E/Projects/RealD/Code/ShipmentSearchController.java",
+		"/E/Code/Pagination/Salesforce-Pagination/Pagination Page.html",
+		"/E/Projects/SoCXO/SoCXO Chatter Post/paneltest",
+		"/C/Users/amohandasan/Desktop/Responsive Table.html",
+		"/C/Users/amohandasan/Desktop/overlay.html",
+		"/C/Users/amohandasan/Desktop/Data-Loader-28.0-conf-SQL-Server-2012-Express/conf/database-conf.xml",
+		"/C/Users/amohandasan/Desktop/Data-Loader-28.0-conf-SQL-Server-2012-Express/conf/process-conf.xml",
+		"/C/Program Files (x86)/salesforce.com/Data Loader/samples/conf/database-conf.xml",
+		"/E/Projects/Sublime/TestenvSoCXO/src/classes/socxouserRegistration.cls",
+		"/E/Projects/Sublime/TestenvSoCXO/src/pages/linkedinPage.page",
+		"/E/Projects/Sublime/TestenvSoCXO/src/classes/utilityclass.cls",
+		"/E/Salesforce Softwares/salesforce_ant_33.0/sample/build.xml",
+		"/E/Salesforce Softwares/salesforce_ant_33.0/sample/build1.xml",
+		"/E/Salesforce Softwares/salesforce_ant_33.0/sample/build.properties",
+		"/E/Salesforce Softwares/salesforce_ant_33.0/sample/unpackaged/package.xml",
+		"/E/Projects/Sublime/SoCXO/src/pages/paneltest.page",
+		"/E/Projects/Sublime/Latest SoCXO Code/src/pages/paneltest.page",
+		"/E/Projects/Sublime/SalesforceSocxo/src/pages/paneltest.page",
+		"/E/Projects/Sublime/SoCXO/src/classes/AuthControllerforproductrefined.cls",
+		"/E/Projects/Sublime/SoCXO/src/classes/AuthControllerforproduct.cls-meta.xml",
+		"/C/Users/amohandasan/Desktop/Socxo main/Private.html",
+		"/E/Projects/SoCXO/similar socxo original/orig page.html",
+		"/C/Users/amohandasan/Desktop/bootstrapCss.css",
+		"/E/Projects/SoCXO/similar socxo original/authcode",
+		"/E/Projects/SoCXO/similar socxo original/paneltest.html",
+		"/C/Users/amohandasan/Desktop/panel-form-register1/panel-form-register/index.html",
+		"/E/Projects/Sublime/TestenvSoCXO/src/pages/SOCXOmainPage.page",
+		"/C/Users/amohandasan/Desktop/ShipmentLineItemTrigger.tgr",
+		"/C/Users/amohandasan/Downloads/socxoapiPublished.raml",
+		"/E/Projects/SoCXO/SoCXO Chatter Post/paneltest original.html",
+		"/E/Projects/SoCXO/New folder/utilityclass.java",
+		"/C/Users/amohandasan/Desktop/pixeladmin.js",
+		"/C/Users/amohandasan/Desktop/SoCXOWeb.js",
+		"/C/Users/amohandasan/Desktop/Socxo main/Private_files/css",
+		"/C/Users/amohandasan/Desktop/Socxo main/Private_files/pixeladmin",
+		"/C/Users/amohandasan/Desktop/Socxo main/Private_files/SoCXOWeb",
+		"/C/Users/amohandasan/Desktop/_Blurb.cshtml",
+		"/C/Users/amohandasan/Desktop/New folder (2)/Private.html",
+		"/E/Projects/SoCXO/similar socxo original/orig page",
+		"/C/Users/amohandasan/Desktop/socxostyle02.css",
+		"/C/Users/amohandasan/Downloads/Appendix A1 Entry Validation 01 Simple.sql",
+		"/E/Projects/SoCXO/SoCXO Developer Code/facebookconnector",
+		"/E/Projects/SoCXO/SoCXO Developer Code/AuthControllerforproductrefined.cls",
+		"/E/Projects/Sublime/SoCXO/src/classes/TopOpportunityController.cls-meta.xml",
+		"/E/Projects/Sublime/SoCXO/src/classes/linkedinUtility.cls",
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Packages/User/mavensmate.sublime-settings",
+		"/E/Desktop/SF/jQuery-Table-Sort-Filter-Salesforce-master/jQuery-Table-Sort-Filter-Salesforce-master/qPeopleListExtension.cls",
+		"/C/Users/amohandasan/Desktop/finalppt/example/index.htm",
+		"/C/Users/amohandasan/Desktop/finalppt/example/pres.css",
+		"/C/Users/amohandasan/Desktop/finalppt/example/pres.js",
+		"/C/Users/amohandasan/Desktop/ppt11.txt",
+		"/C/Users/amohandasan/Desktop/Quiz/Quiz/index.php",
+		"/C/Users/amohandasan/Desktop/htmlpresent-master/htmlpresent-master/pres.js",
+		"/C/Users/amohandasan/Desktop/htmlpresent-master/htmlpresent-master/pres.css",
+		"/C/Users/amohandasan/Desktop/htmlpresent-master/htmlpresent-master/index.htm",
+		"/C/Users/amohandasan/Desktop/Dreamflash2014New/Dreamflash2014New/dreamflash.html",
+		"/C/Users/amohandasan/Desktop/style.css",
+		"/C/Users/amohandasan/Desktop/Contact Account.java",
+		"/E/Desktop/SF/jQuery-Table-Sort-Filter-Salesforce-master/jQuery-Table-Sort-Filter-Salesforce-master/qPeopleList.vf",
+		"/E/Code/Pagination/Salesforce-Pagination/Pagination Class.java",
+		"/E/Desktop/SF/sfdc-oauth-playground-master/sfdc-oauth-playground-master/OAuth/src/classes/OAuth.cls",
+		"/D/SoCXO/New folder/SOCXOclass.java",
+		"/D/SoCXO/New folder/SOCXOmainPage.html",
+		"/C/Users/amohandasan/Desktop/popup.html",
+		"/C/Users/amohandasan/Desktop/sfdc-oauth-playground-master/sfdc-oauth-playground-master/OAuth/src/classes/AuthController.cls",
+		"/C/Users/amohandasan/Desktop/TwitterApi.cs",
+		"/C/Users/amohandasan/Desktop/jQuery-Table-Sort-Filter-Salesforce-master/jQuery-Table-Sort-Filter-Salesforce-master/qPeopleList.vf",
+		"/C/Users/amohandasan/Desktop/jQuery-Table-Sort-Filter-Salesforce-master/jQuery-Table-Sort-Filter-Salesforce-master/qPeopleListExtension.cls",
+		"/C/Users/amohandasan/Desktop/Suyati/SalesITV/PurchaseCX.java",
+		"/C/Users/amohandasan/Desktop/Suyati/SalesITV/purchase.html",
+		"/C/Users/amohandasan/Desktop/hello.html",
+		"/C/Users/amohandasan/Desktop/popup.js",
+		"/C/Users/amohandasan/Desktop/1111.html",
+		"/C/Users/amohandasan/Downloads/lightning-tutorial/style.css"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\"",
+			"post",
+			"lstBlurbs",
+			"\"",
+			"scheduletest",
+			"SchedulePost",
+			"xfb3",
+			"SchedulePost",
+			"SchedulePopuplinkedIn",
+			"SchedulePost",
+			"body2",
+			"container",
+			"allcategories",
+			"getall",
+			"getItems",
+			"categorymap",
+			"getmerelatedblurbs",
+			"strX",
+			"test1",
+			"test",
+			"savecategory",
+			"allcategories",
+			"bluridtoshow",
+			"allcategories",
+			"currenttoken1",
+			"categorylist1",
+			"categorymap",
+			"accsToken",
+			"loginError",
+			"showmsg",
+			"equalTo",
+			"required",
+			"equalTo",
+			"req2",
+			"req1",
+			"statusofblurb",
+			"scheduletest",
+			"SchedulePopupFacebook",
+			"lstBlurbs",
+			"blurbString",
+			"instantShareOff",
+			"Instantsharecheck",
+			"xfb1",
+			"test",
+			"\"",
+			"AuthControllerforproductrefined",
+			"paneltest002",
+			"SOCXOmainPage",
+			"SOCXOclass",
+			"deletecategory",
+			"userbody",
+			"username",
+			"jsonDataAllLineItems",
+			"shipmentLineItemMap",
+			"jsonDataMinimal",
+			"jsonDataAllLineItems",
+			"startse",
+			"jsonDataMinimal",
+			"facebookpost",
+			"tokens",
+			"resource",
+			"http://testenv.socxo.com/api/2.0/user/profile",
+			"categories",
+			"Test.setMock",
+			"state",
+			"debug",
+			"shipmentsTable",
+			"selectedWarehouseId",
+			"ShipmentSearchController",
+			"jsonDataAllLineItems",
+			"debug",
+			"allShipments",
+			"alert",
+			"shipmentsTable",
+			"buildShipmentsTable",
+			"shipmentstable",
+			"message",
+			"selectCheckbox",
+			"reset",
+			"clear",
+			"checkCount",
+			"selectAllCheckbox",
+			"rangeFromDate",
+			"startSearch",
+			"shipDate",
+			"idFromDate",
+			"errorMsg",
+			"rangeFrom",
+			"selectedWarehouseId",
+			"rangeFromDate",
+			"rangeFrom",
+			"customerNumber",
+			"customerNum",
+			"customerNumber",
+			"rangeFromDate",
+			"rangeFrom",
+			"dFrom",
+			"allLineItems",
+			"rangeFromDate",
+			"shipmentLineItemMap",
+			"selectedWarehouseId",
+			"warehouseIds",
+			"selectedWarehouseId",
+			"jsonDataMinimal",
+			"getShipmentTypes",
+			"selectall",
+			"10",
+			"showing",
+			"allShipments",
+			"allShipmentsTables",
+			"Search:",
+			"jsonDataMinimal",
+			"buildAccountsTable",
+			"rowIdentifier",
+			"selectall",
+			"warehouseIds",
+			"selectedWarehouseId",
+			"/token",
+			"getmet",
+			"twittertok",
+			"sf.password",
+			"sf.username",
+			"status",
+			"posting..",
+			"postin",
+			"status1",
+			"status",
+			"action"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\\"",
+			"BlurbController",
+			"BlurbControllerPage",
+			"socxoLoginPage",
+			"socxoLoginController",
+			"ShipmentCompletion",
+			"tblShipments",
+			"referenceNumber",
+			"sfdeveloper123",
+			"aditya-developer@salesforce.com",
+			"answer1",
+			"j$",
+			"verifier_token",
+			"td",
+			"<td>",
+			"quotingProcess",
+			"opportunityRef"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Latest SoCXO Code.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 178.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
