@@ -12,7 +12,7 @@ Public string getmetoken(string s,string url)
     req.setBody(s);
     req.setEndpoint(url);
     system.debug('Request1'+req);
-    system.debug('sssssss'+s);
+    system.debug('Token reponse is:::'+s);
     try {
            res = ht.send(req);
            string postbody=res.getBody();
@@ -28,7 +28,7 @@ public string getmerelatedblurbs (Id recid, string category) {
 
     List<SOCXO_token__c> currenttoken1 = [select Access_Token__c,expireson__c,tenanentendpoint__c from SOCXO_token__c where Id =:recid];
 
-    //string categoryendpoint = 'http://testenv.socxo.com/api/blurb/private/1/'+Integer.valueof(category);
+    
     string categoryendpoint ='http://testenv.socxo.com/api/2.0/company/'+Integer.valueof(category)+'/blurbs';
    
     Http h = new Http();
