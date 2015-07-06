@@ -2,6 +2,7 @@
 <head>
     <meta name="viewport" content="user-scalable=no, width=device-width" />
     </head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" />
@@ -318,12 +319,208 @@ margin-bottom:10px;
         margin-right: 0;
     }
 }
+/* custom style*/
+body{
+font-family: 'Roboto', sans-serif;
+font-size:14px;
+}
+ul li, ol li{margin:0;padding:0}
+.logo img{
+      width: 70px;
+  margin-left: -10px;
+  margin-top: -5px;
+}
+#header {
+  background: #4285F4;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+  height: 65px;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  left: 0;
+  padding-right: 10px;
+  top: 0;
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#header:not(.sidebar-toggled).header-up {
+  -webkit-transform: translate3d(0, -70px, 0);
+  transform: translate3d(0, -70px, 0);
+}
+
+.header-inner {
+  list-style: none;
+  padding: 15px 0;
+}
+
+.header-inner > li {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.header-inner > li:not(:last-child) {
+  margin-right: -2px;
+}
+
+.header-inner .logo a {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  display: block;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+#menu-trigger {
+  width: 65px;
+  height: 35px;
+  cursor: pointer;
+  margin:0;
+}
+
+#menu-trigger .line-wrap .line {
+  background-color: #fff;
+}
+
+#menu-trigger:before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  z-index: 0;
+}
+
+#menu-trigger.open:before {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+.top-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.top-menu > li {
+  display: inline-block;
+}
+
+/*
+ * Collapse Menu Icons
+ */
+
+.line-wrap {
+  width: 18px;
+  height: 12px;
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  margin: 10px 20px;
+}
+
+.line-wrap .line {
+  width: 18px;
+  height: 2px;
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  margin:0;
+}
+
+.line-wrap .line.center {
+  margin: 3px 0;
+}
+
+.open .line-wrap {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.open .line-wrap .line.top {
+  width: 12px;
+  transform: translateX(8px) translateY(1px) rotate(45deg);
+  -webkit-transform: translateX(8px) translateY(1px) rotate(45deg);
+}
+
+.open .line-wrap .line.bottom {
+  width: 12px;
+  transform: translateX(8px) translateY(-1px) rotate(-45deg);
+  -webkit-transform: translateX(8px) translateY(-1px) rotate(-45deg);
+}
+.noSidebarCell{padding:0}
+#sidebar-wrapper{  
+  background: #FFF;
+border-right: 1px solid #E2E2E2;
+box-shadow: 0 0 4px 0 #D8D8D8;
+}
 </style>
 <apex:form >
+<!-- header-->
+ <header id="header">
+            <ul class="header-inner">
+                <li id="menu-trigger" data-trigger="#sidebar" >
+                    <div class="line-wrap">
+                        <div class="line top"></div>
+                        <div class="line center"></div>
+                        <div class="line bottom"></div>
+                    </div>
+                </li>
+            
+                <li class="logo hidden-xs">
+                   <a href="#"><img src="http://socxo.com/wp-content/uploads/2014/12/socxo-logo3.png"/></a>
+                </li>
+                
+                <li class="pull-right">
+                <ul class="top-menu">
+                    <li id="toggle-width">
+                        <div class="toggle-switch">
+                            <input id="tw-switch" type="checkbox" hidden="hidden"/>
+                            <label for="tw-switch" class="ts-helper"></label>
+                        </div>
+                    </li>
+                  
+                    </ul>
+                </li>
+            </ul>
+           </header>
+<!-- /header -->
 <div id="wrapper">
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li class="sidebar-brand"><a href="#"><img src="http://socxo.com/wp-content/uploads/2014/12/socxo-logo3.png"/></a></li>
+           
             <div class="category">
                 <h3 style="color:white">Categories</h3>
             </div>
@@ -358,7 +555,7 @@ margin-bottom:10px;
                         <apex:outputPanel >
 
                         <div class="container-fluid">
-                        <a href="#menu-toggle" id="menu-toggle"><i class="fa fa-outdent"></i></a>
+                     
                             <div class="sxo_dashboard_masonry_grid">
 
                                 <!-- <apex:outputLabel value="{!categorylist[0]}"/> -->
@@ -1165,7 +1362,7 @@ margin-bottom:10px;
         }
     </script>
     <script type="text/javascript">
-    $("#menu-toggle").click(function(e) {
+    $("#menu-trigger").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
