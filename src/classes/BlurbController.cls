@@ -3,7 +3,7 @@ public with sharing class BlurbController {
 // main class
 //Properties and variables
     private final List<mailer__c> linkforemail; 
-    private final lead lead1;
+    //private final lead lead1;
     String[] categories = new String[]{};
     public boolean req {get;set;}
     //public string x1 { get; set{x1=value;}}
@@ -34,12 +34,12 @@ public with sharing class BlurbController {
     public list<url__c> categorylist { get {return categorylist1;} set; }
     public String password   { get; set; }
     
-    public String postbody {get;set;}
-    public String userbody {get;set;}
+    //public String postbody {get;set;}
+    //public String userbody {get;set;}
     public String facebookbody {get;set;}
     public String fbaccesstoken {get;set;}
     
-     public  string accsToken {get;set;}
+     //public  string accsToken {get;set;}
      public  string fbmessage {get;set;}
      public  string fbstatus {get;set;}
 
@@ -103,39 +103,22 @@ public with sharing class BlurbController {
 
         //blurbString = blurbs!!!!!;
         showeditpanel = false;
-        string callbackUrl1 = EncodingUtil.urlEncode('https://' + ApexPages.currentPage().getHeaders().get('Host') + Page.paneltest.getUrl(), 'UTF-8');
+        string callbackUrl1 = EncodingUtil.urlEncode('https://' + ApexPages.currentPage().getHeaders().get('Host') + Page.BlurbControllerPage.getUrl(), 'UTF-8');
 
 
         linkforemail = [select id, link__c from mailer__c];
         string code = ApexPages.currentPage().getParameters().get('code');
         string state = ApexPages.currentPage().getParameters().get('state');
         system.debug('code:::' + code);
-        //system.debug('hi');
-        //system.debug('')
-        //categorylist = new list<url__c>();
-
-       /* if (code != '' && state == 'facebook') {
-            socxoApiHandler util1 = new socxoApiHandler();
-            fbaccesstoken = util1.getmefacebooktoken(code, callbackurl1);
-            system.debug('fbtoken:::' + fbaccesstoken);
-
-        }*/
-
-
-        /*if(code!='' && state=='twitter') {
-    socxoApiHandler util1 = new socxoApiHandler();
-    twitteraccesstoken = util1.getmetwittertoken(code,callbackurl1);
-
-  }  
-  */
+        
 
 
     }
 
-    public List < mailer__c > getcategoryblurbs() {
-        //system.debug('WWWWW'+linkforemail[0].URLs__r);
+    /*public List < mailer__c > getcategoryblurbs() {
+        
         return linkforemail;
-    }
+    }*/
 
     public boolean getstatusofblurb() {
         if (ApexPages.currentPage().getParameters().get('BlurbId') != null && ApexPages.currentPage().getParameters().get('CategoryId') != null) {
@@ -146,11 +129,7 @@ public with sharing class BlurbController {
 
     }
 
-    
-
-    
-
-    public PageReference stopeditblurbtopost() {
+     public PageReference stopeditblurbtopost() {
         for (wrapper1 m: lstBlurbs) {
             if (m.BlurbId == xfb1) {
                 m.Editmode = false;
@@ -181,10 +160,7 @@ public with sharing class BlurbController {
         }
         System.Debug('test:' + ApexPages.currentPage().getParameters().get('CategoryId') + ' ' + ApexPages.currentPage().getParameters().get('BlurbId'));
 
-        /*socxoApiHandler u = new socxoApiHandler();
-        userbody = u.togetuserinformation();
-        system.debug('USER:::' + userbody);*/
-
+        
         List < SOCXO_token__c > currenttoken1 = [select Access_Token__c, expireson__c, tenanentendpoint__c from SOCXO_token__c where SOCXO_Service__r.SFuser__r.Id = : userinfo.getuserid()];
 
         string blurbendpoint = 'http://testenv.socxo.com/api/2.0/company/categories';
@@ -206,7 +182,7 @@ public with sharing class BlurbController {
             res = h.send(req);
         }
         else{
-            res = TestCallouts.Categories();
+            res = mockApiCallouts.Categories();
         }
         body1 = res.getBody();
         System.debug('Received response (' + res.getStatusCode() + ' ' + res.getStatus() + ')');
@@ -262,44 +238,12 @@ public with sharing class BlurbController {
                     system.debug('blurbtopopup :' + blurbtopopup);
                 }
 
-                /*url__c u = new url__c();
-      u.category__c = allcategories.get(w.CategoryId);
-      u.BlurbId__c = w.BlurbId;
-      u.Description__c = w.Description;
-      u.EnterpriseBlurbId__c = w.EnterpriseBlurbId;
-      u.links__c = w.Url;
-      u.ImageUrl__c = w.ImageUrl;
-      u.Title__c = w.Title;*/
-
-                // blurbBody.categoryId = allcategories.get(w.CategoryId);
-                /*blurbBody.BlurbId = w.BlurbId;
-      blurbBody.Description = w.Description;
-      blurbBody.EnterpriseBlurbId = w.EnterpriseBlurbId;
-      blurbBody.Url = w.Url;
-      blurbBody.ImageUrl = w.ImageUrl;
-      blurbBody.Title = w.Title;*/
-
-                // lstBlurbs.add(blurbBody);
-
-                // saveurl.add(u);
-                // categorylist1.add(u);
-
-
-
-
-                // system.debug('imageurlsssss##'+u.ImageUrl__c);
-
-                //categorylist.add(u);
+                
                 mailer__c m2 = new mailer__c();
                 m2.link__c = w.url;
                 mailerobj.add(m2);
             }
-            /* selcategory = [select id from category__c  where categoryId__c = : categories[0]];
-     delete selcategory.URLs__r;
-     insert saveurl;
-     list<mailer__c>formail = [select id from mailer__c];
-     delete formail;
-     insert mailerobj; */
+            
             system.debug('%%%%%%%%%%' + categorylist1);
             system.debug('%%%%%%%%%%' + categorylist);
 
@@ -342,7 +286,7 @@ public with sharing class BlurbController {
         return null;
     }
 
-    public List < SelectOption > getItems() {
+    /*public List < SelectOption > getItems() {
         List < SelectOption > options = new List < SelectOption > ();
 
         for (string s: categorymap1.keyset()) {
@@ -351,26 +295,13 @@ public with sharing class BlurbController {
         }
         return options;
     }
-
+*/
 
     //test method to  check whether the selected category is picked up
     //Adding some logic to call the enpoint to get the blurbs associated with a particular category.
 
 
-    //method for Sending email to the Lead
-    public PageReference sendmail() {
-        system.debug('cattttt' + categorylist);
-        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-        mail.settemplateid('00XC0000001KttT');
-        mail.setSaveAsActivity(true);
-        mail.settargetobjectid(lead1.id);
-        Messaging.sendEmail(new Messaging.SingleEmailMessage[] {
-            mail
-        });
-        return null;
-    }
-
-    //dummy method to use in the paneltest page
+    //dummy method to use in the BlurbControllerPage page
 
     public PageReference test1() {
         categorylist1.clear();
@@ -381,6 +312,9 @@ public with sharing class BlurbController {
 
         //calling the utility class to make callout
         socxoApiHandler util = new socxoApiHandler();
+        if(Test.isRunningTest()){
+            x1 = '1';
+        }
         body2 = util.getmerelatedblurbs(currenttoken1[0].id, x1);
 
         system.debug('Blurb Response::::' + body2);
@@ -404,45 +338,11 @@ public with sharing class BlurbController {
             }
 
 
-
-            /*url__c u = new url__c();
-      u.category__c = allcategories.get(w.CategoryId);
-      u.BlurbId__c = w.BlurbId;
-      u.Description__c = w.Description;
-      u.EnterpriseBlurbId__c = w.EnterpriseBlurbId;
-      u.links__c = w.Url;
-      u.ImageUrl__c = w.ImageUrl;
-      u.Title__c = w.Title;*/
-
-            // blurbBody.categoryId = allcategories.get(w.CategoryId);
-            /*blurbBody.BlurbId = w.BlurbId;
-      blurbBody.Description = w.Description;
-      blurbBody.EnterpriseBlurbId = w.EnterpriseBlurbId;
-      blurbBody.Url = w.Url;
-      blurbBody.ImageUrl = w.ImageUrl;
-      blurbBody.Title = w.Title;*/
-
-            // lstBlurbs.add(blurbBody);
-
-            // saveurl.add(u);
-            // categorylist1.add(u);
-
-
-
-
-            // system.debug('imageurlsssss##'+u.ImageUrl__c);
-
-            //categorylist.add(u);
             mailer__c m = new mailer__c();
             m.link__c = w.url;
             mailerobj.add(m);
         }
-        /* selcategory = [select id from category__c  where categoryId__c = : categories[0]];
-     delete selcategory.URLs__r;
-     insert saveurl;
-     list<mailer__c>formail = [select id from mailer__c];
-     delete formail;
-     insert mailerobj; */
+        
         system.debug('%%%%%%%%%%' + categorylist1);
         system.debug('%%%%%%%%%%' + categorylist);
 
@@ -497,26 +397,13 @@ public with sharing class BlurbController {
         system.debug('fbmessage:::' + fbmessage);
         system.debug('fbstatus:::' + fbstatus);
 
-        string callbackUrl = EncodingUtil.urlEncode('https://' + ApexPages.currentPage().getHeaders().get('Host') + Page.paneltest.getUrl(), 'UTF-8');
+        string callbackUrl = EncodingUtil.urlEncode('https://' + ApexPages.currentPage().getHeaders().get('Host') + Page.BlurbControllerPage.getUrl(), 'UTF-8');
 
 
         if (fbstatus == '1006') {
-            //string token1 = auth.AuthToken.getaccesstoken('0SOC0000000PAsc','facebook');
-            //system.debug('TTTTTTTTTTTTT'+token1);
 
             showpopup();
 
-            /*String url = 'https://www.facebook.com/dialog/oauth?';
-        url += '&client_id=755760694472509';
-        url += '&scope=' + EncodingUtil.urlEncode('email public_profile', 'UTF-8');
-        //url += '&scope=' + EncodingUtil.urlEncode('full', 'UTF-8');
-        url +='&redirect_uri='+ callbackUrl;
-        //util.getmecode(url);
-        return new pagereference('https://login.salesforce.com/services/auth/oauth/00DC00000017HRhMAM/testappfb');*/
-
-
-            //PageReference pageRef = new PageReference(url);
-            //pageref.setredirect(true); 
         } else {
             closepopup();
             showPopup1();
@@ -564,12 +451,13 @@ public with sharing class BlurbController {
         System.debug('twitterstatus:' + twitterstatus);
         System.debug('twittermessage:' + twittermessage);
 
-        string callbackUrl = EncodingUtil.urlEncode('https://' + ApexPages.currentPage().getHeaders().get('Host') + Page.paneltest.getUrl(), 'UTF-8');
+        string callbackUrl = EncodingUtil.urlEncode('https://' + ApexPages.currentPage().getHeaders().get('Host') + Page.BlurbControllerPage.getUrl(), 'UTF-8');
 
 
         if (twitterstatus == '1006') {
             showpopup();
-        } else {
+        } 
+        else {
             closepopup();
             showPopup1();
         }
@@ -635,7 +523,9 @@ public with sharing class BlurbController {
      system.debug('xfb3'+xfb3);
       for (wrapper1 m: lstBlurbs) {
             if (m.BlurbId == xfb1) {
-               
+                if(Test.isRunningTest()){
+                    xfb3 = 'facebook';
+                }
                 if(xfb3 == 'facebook') {
                 blurbDetailId = m.UserBlurbId;
                 blurbTitle = m.fbtittle;
@@ -721,19 +611,6 @@ public with sharing class BlurbController {
     }
 
 
-
-    public pagereference fbconnect() {
-
-
-        string callbackUrl = EncodingUtil.urlEncode('https://' + ApexPages.currentPage().getHeaders().get('Host') + Page.paneltest.getUrl(), 'UTF-8');
-        String url = 'https://www.facebook.com/dialog/oauth?';
-        url += '&client_id=755760694472509';
-        url += '&scope=' + EncodingUtil.urlEncode('email public_profile', 'UTF-8');
-        url += '&redirect_uri=' + callbackUrl;
-        url += '&state=facebook';
-        return new pagereference(url);
-    }
-
     public void postinChatter() {
 
         //List <url_c> blurbInfo = [SELECT ]
@@ -741,7 +618,7 @@ public with sharing class BlurbController {
         system.debug('Blurb details::' + blurbLink + 'Title++' + blurbTitle);
         FeedItem post = new FeedItem();
         post.ParentId = userinfo.getUserId();
-        post.Body = 'Go to this Blurb:' + 'https://c.ap2.visual.force.com/apex/paneltest002?BlurbId=' + xfb1 + '&CategoryId=' + xfb2;
+        post.Body = 'Go to this Blurb:' + 'https://c.ap2.visual.force.com/apex/BlurbControllerPage?BlurbId=' + xfb1 + '&CategoryId=' + xfb2;
         system.debug('xfb1::' + xfb1);
         post.LinkUrl = blurbLink;
         post.Title = blurbTitle;
@@ -839,6 +716,11 @@ public with sharing class BlurbController {
             set;
         }
         public string CategoryId {
+            get;
+            set;
+        }
+
+        public string categoryName {
             get;
             set;
         }

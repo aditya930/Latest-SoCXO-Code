@@ -1,22 +1,6 @@
-@IsTest
-
-public class validateUserControllerTest {
-
-
-
-//First time users to socxo will be redirected to the login page for authentication. The method below tests it.
-static testMethod void ValidateRedirect () {
-
-PageReference pageRef = Page.validateUserPage;
-Test.setCurrentPage(pageref);
-validateUserController con = new validateUserController();
-String nextPage = con.redir().getUrl();
-system.assertequals(nextPage,'/apex/socxologinpage');
-
-
-}
-
-static testMethod void ValidateRedirect2 (){
+@isTest
+public class sfUsersInviteControllerTest {
+    static testMethod void inviteFunction(){
         SOCXO_Service__c testSocxoService = new SOCXO_Service__c(
                                                 username__c = 'manager@testenv.com',
                                                 password__c = '123456',
@@ -31,8 +15,12 @@ static testMethod void ValidateRedirect2 (){
                                             );
         INSERT testSocxoToken;
 
-        validateUserController con = new validateUserController();
-        con.redir();
-}
-
+        String email = 'test@xyz.com';
+        sfUsersInviteController inviteObj = new sfUsersInviteController();
+        PageReference pageRef = Page.sfUsersInvitePage;
+        Test.setCurrentPage(pageRef);
+        sfUsersInviteController.getUserDetails();
+        String testResponse = sfUsersInviteController.pushEmails(email);
+        system.assert(testResponse!=null,'No Response!');
+    }
 }

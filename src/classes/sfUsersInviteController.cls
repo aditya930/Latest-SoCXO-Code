@@ -7,14 +7,7 @@ global with sharing class sfUsersInviteController {
     
     @RemoteAction
     global static String pushEmails(String emails){
-        /*
-        if(emails.length() > 0){
-            return 'success';
-        }
-        else{
-            return 'failure';
-        }
-        */
+        
         socxoApiHandler uc = new socxoApiHandler();
         String response = uc.sendInvite(emails);
         return response;

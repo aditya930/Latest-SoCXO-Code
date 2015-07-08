@@ -1,70 +1,64 @@
-@istest
-public with sharing class socxoLoginControllerTest{
-        public static testmethod void testmethod1(){
-        
-        socxoLoginController controller= new socxoLoginController();
+@IsTest
 
-        controller.password='pwd';
-        controller.username='un';
-        controller.req1=false;
-        controller.req2=true;
-        controller.accsToken='testtoken';
-        controller.tenenpoint='testtenen';
-        controller.expiresin='textexp';
-        controller.postbody='testpost';
-         
-        PageReference testPage = Page.socxoLoginPage;
-        test.setCurrentPage(testPage);
-        ApexPages.currentPage().getParameters().put('username','un');
-        ApexPages.currentPage().getParameters().put('password','pw');
-        controller= new socxoLoginController();
+Public class socxoLoginControllerTest{
 
-        SOCXO_Service__c service=new SOCXO_Service__c();
-        service.OwnerId= UserInfo.getUserId();
-        service.password__c='pwd';
-        service.username__c='un';
-        service.SFuser__c = userinfo.getuserid(); 
-        insert service;
-        System.debug('service = '+service);
+//To test whether we are getting an access token when authenricating.
+static testMethod void AuthenticationSuccessTest() {
+SingleRequestMock fakeResponse = new SingleRequestMock(200,
+                                                 'Complete',
+                                                 '[{"access_token":"1THKEVHF9vuNdhDcNzfUPGr_nCroMly3sUMpIsg0ITvXx7L14rUHIEzHzF3jroLB7P_v-_CP8MsdwYuWuxlWNIJVLbTNfNA_INR19ABqDbcmBfbuWVmyimloy_QTwQz3fObqoF1Q-qsvE6yOU-7YYDKj_hCMdi2VpuoaW9OM5V1bcy1OrTDEAs-IT_xaPaNVh0wbkB9U1ZsU0yIsddVL6towmBS4Ym--1D2TBnX9TXRUEQntmqyyMDQQvZsMD844f54eoJLfydgyLjRmOvKcSB85ik1D0C-SxKhQoB89dc1m38Ovyg3QALb_eTRAmyVELu5UCk8v72guUFF09Hl0ZjuvgkQ22-ZJEzMWrr6L7-jnDvJ6AWNhzyBEmCqt2pM6vG0oaMcZmhK8lvKw4GXayEJqeH0L_1SAPDVoln3D_I1wFmVViC_pQGWL4adfFZa68-NN5w","token_type":"bearer","expires_in":31535999,"userName":"rod@socxo.com ",".issued":"Thu, 03 Jul 2014 08:33:17 GMT",".expires":"Fri, 03 Jul 2050 08:33:17 GMT"}]',
+                                                  null);
+PageReference pageRef = Page.socxoLoginPage;
+Test.setCurrentPage(pageref);
+socxoLoginController con = new socxoLoginController();
+con.password = 'testpassword';
+con.username = 'username';
+Test.setMock(HttpCalloutMock.class, fakeResponse);
+//con.authorize();
+String nextPage = con.authorize().getUrl();
+system.assertequals(nextPage,'/apex/blurbcontrollerpage');
 
-        SOCXO_token__c currenttoken = new SOCXO_token__c();
-        currenttoken.Access_Token__c = 'test Access_Token__c' ;
-        currenttoken.expireson__c = datetime.now(); 
-        currenttoken.SOCXO_Service__c = service.Id;
-        //currenttoken.SOCXO_Service__r.SFuser__r.Id = UserInfo.getUserId();
-        INSERT currenttoken;
+//Testing further to check the token expiry.
+PageReference pageRef1 = Page.validateUserPage;
+Test.setCurrentPage(pageref1);
+validateUserController con1 = new validateUserController();
+String nextPage1 = con1.redir().getUrl();
+system.assertequals(nextPage1,'/apex/blurbcontrollerpage');
 
-        System.debug('currenttoken = '+currenttoken);
 
-        System.debug('SFUSer'+currenttoken.SOCXO_Service__r.SFuser__r.Id);
 
-        
-        
-       /*
-        
-        SOCXO_token__c token= new SOCXO_token__c();
-        token.expireson__c=datetime.now();
-        token.SOCXO_Service__c=service.Id;
-        token.Access_Token__c='token';
-        token.tenanentendpoint__c='tt';
-        insert token;
-        List<SOCXO_token__c> currenttoken= new List<SOCXO_token__c>();
-        currenttoken.add(token);
-        
-        SOCXO_token__c token1= new SOCXO_token__c();
-        token1.expireson__c=datetime.now();
-        token1.SOCXO_Service__c=service.Id;
-        token1.Access_Token__c='';
-        token1.tenanentendpoint__c='tt';
-        insert token1;
-        List<SOCXO_token__c> currenttoken1= new List<SOCXO_token__c>();
-        currenttoken1.add(token1);
-        
-       // controller.authorize();
-       */
-       
-        
-     }
-      
+}
+
+//To test whether we are not getting an access token when authenricating.
+static testMethod void AuthenticationFailureTest() {
+SingleRequestMock fakeResponse = new SingleRequestMock(0,
+                                                 'Complete',
+                                                 '[{"error":"invalid_grant","error_description":"The user name or password is incorrect."}]',
+                                                  null);
+PageReference pageRef = Page.socxoLoginPage;
+Test.setCurrentPage(pageref);
+socxoLoginController con = new socxoLoginController();
+con.password = 'testpassword';
+con.username = 'username';
+Test.setMock(HttpCalloutMock.class, fakeResponse);
+//con.authorize();
+//String nextPage = con.authorize().getUrl();
+con.authorize();
+List<Apexpages.Message> msgs = ApexPages.getMessages();
+boolean a = false;
+        for(Apexpages.Message msg:msgs){
+         if (msg.getDetail().contains('The username/password is incorrect'))
+           {
+            a = true;
+           } 
+        }
+system.assert(a);
+
+
+}
+
+
+
+
 
 }

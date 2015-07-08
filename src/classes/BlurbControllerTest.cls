@@ -1,17 +1,42 @@
 @IsTest
 public class BlurbControllerTest{
     static testMethod void authorize_test(){
-        BlurbController authController = new BlurbController();
+        BlurbController bController = new BlurbController();
+         
         //authController.code = 'code123';
-        authController.username = 'manager@testenv.com';
-        authController.password = '123456';
+        bController.username = 'manager@testenv.com';
+        bController.password = '123456';
+        bController.x1 ='1';
+        bController.xfb3 = 'facebook';
         //authController.lstBlurbs = (wrapper1:[BlurbId=14091, CategoryId=1, Description=sample, Editmode=null, EnterpriseBlurbId=null, FeedName=The Hindu - Opinion, ImageUrl=http://www.thehindu.com/multimedia/dynamic/02458/02DMCNIRJALA_EKADA_2458032c.jpg, Title= As humanity dries up, Url=http://www.thehindu.com/opinion/columns/Ziya_Us_Salam/capital-check-as-humanity-dries-up-in-dellhi/article7374892.ece?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication, UserBlurbId=5593db35c4ea8a58c4dbe24e, comment=null, fbcomment=null, fbdecription=null, fbtittle=null, lnkcomment=null, lnkdecription=null, lnktittle=null, tweeterpost=null])
         PageReference pageRef = Page.BlurbControllerPage;
         Test.setCurrentPage(pageRef);
         ApexPages.currentPage().getParameters().put('code','code123');
         ApexPages.currentPage().getParameters().put('state','state123');
-        authController = new BlurbController();
+        //ApexPages.currentPage().getParameters().put('BlurbId','14132');
+        //ApexPages.currentPage().getParameters().put('categoryId','1');
+        bController = new BlurbController();
         
+        BlurbController.wrapper1 blurbDetails = new BlurbController.wrapper1();
+        blurbDetails.BlurbId = '14132';
+        blurbDetails.UserBlurbId = '559512efc4ea8a60088b3db6';
+        blurbDetails.EnterpriseBlurbId = '3';
+        blurbDetails.Title = 'test';
+        blurbDetails.Description = 'test';
+        blurbDetails.ImageUrl = 'testimage';
+        blurbDetails.Url = 'testurl';
+        blurbDetails.comment = 'test';
+        blurbDetails.FeedName = 'testfeed';
+        blurbDetails.CategoryId = '1';
+        blurbDetails.categoryName = 'Industry';
+        blurbDetails.Editmode = true;
+        blurbDetails.fbtittle = 'testTitle';
+        blurbDetails.fbcomment = 'testComment';
+        blurbDetails.fbdecription = 'testDesc';
+        blurbDetails.tweeterpost = 'testTweet';
+        blurbDetails.lnktittle = 'linkTitle';
+        blurbDetails.lnkcomment = 'linkComment';
+        blurbDetails.lnkdecription = 'lnkDesc';
 
         SOCXO_Service__c testSocxoService = new SOCXO_Service__c(
                                                 username__c = 'manager@testenv.com',
@@ -27,7 +52,23 @@ public class BlurbControllerTest{
                                             );
         INSERT testSocxoToken;
 
-        authController.Categories();
+        bController.Categories();
+        bController.showselectedblurb = false;
+        ApexPages.currentPage().getParameters().put('BlurbId','14132');
+        ApexPages.currentPage().getParameters().put('categoryId','1');
+        PageReference testPage = bController.Categories();
+        System.assertEquals(testPage,null);
+        bController.test1();
+        bController.postinfb();
+        bController.postintwitter();
+        bController.postinLinkedin();
+        bController.xfb3 = 'facebook';
+        bController.scheduletest();
+        bController.listAllBlurbs();
+        bController.postinChatter();
+        bController.getstatusofblurb();
+        bController.stopeditblurbtopost();
+        bController.editblurbtopost();
 
     }
 }

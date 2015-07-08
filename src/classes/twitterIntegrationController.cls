@@ -15,7 +15,7 @@ public with sharing class twitterIntegrationController {
     public string twittertokensecret;
     public string urlname;
     public string twitterconnectbody;
-    public string test;
+   // public string test;
     
     private String request_token;
     private String verifier_token;
@@ -150,7 +150,13 @@ public void sign(HttpRequest req) {
         System.debug('Authorization: '+header);
         req.setHeader('Authorization',header);
         Http h = new Http();
-        HttpResponse res = h.send(req);
+        HttpResponse res = new HttpResponse();
+        if(Test.isRunningTest()){
+          res = mockApiCallouts.mockApiResultTwitterUserDetails();
+        }
+        else{
+           res = h.send(req);
+        }      
         string body1 = res.getBody();
         System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');
         system.debug('body1111'+body1);

@@ -33,6 +33,7 @@ public string getmerelatedblurbs (Id recid, string category) {
    
     Http h = new Http();
     HttpRequest req = new HttpRequest();
+    HttpResponse res = new HttpResponse();
     req.setHeader('content-type','application/json');
    // req.setHeader('content-type','message/rfc822');
     req.setHeader('Accept','application/json');
@@ -40,7 +41,12 @@ public string getmerelatedblurbs (Id recid, string category) {
     req.setMethod('GET');
     req.setEndpoint(categoryendpoint); 
     System.debug('Sending request...');
-    HttpResponse res = h.send(req);
+    if(Test.isRunningTest()){
+        res = mockApiCallouts.getmerelatedblurbs();
+    }
+    else{
+    res = h.send(req);
+    }
     string body2 = res.getBody();
     System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');        
     system.debug('Related Blurbs Response::'+body2);
@@ -62,7 +68,7 @@ public string getmerelatedblurbs (Id recid, string category) {
     req.setEndpoint(categoryendpoint); 
     System.debug('Sending request...');
     if(Test.isRunningTest()){
-        res = TestCallouts.getAllBlurbs();
+        res = mockApiCallouts.getAllBlurbs();
     }
     else{
     res = h.send(req);
@@ -75,7 +81,7 @@ public string getmerelatedblurbs (Id recid, string category) {
   
   //method to gather user information necessary to connect with facebook.
   
-  public string togetuserinformation() {
+  /*public string togetuserinformation() {
   
      List<SOCXO_token__c> currenttoken1 = [select Access_Token__c,expireson__c,tenanentendpoint__c from SOCXO_token__c where  SOCXO_Service__r.SFuser__r.Id =:userinfo.getuserid()];
 
@@ -94,7 +100,7 @@ public string getmerelatedblurbs (Id recid, string category) {
     System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');        
     system.debug('User Information Response::'+body2);
     return body2;
-    }  
+    }  */
     
    //Method to post in facebook.
    
@@ -134,6 +140,7 @@ public string getmerelatedblurbs (Id recid, string category) {
     string categoryendpoint = 'http://testenv.socxo.com/api/2.0/socialmedia/facebook/post';
     Http h = new Http();
     HttpRequest req = new HttpRequest();
+    HttpResponse res = new HttpResponse();
     system.debug('Accesstoken::::' + currenttoken1[0].Access_Token__c);
     req.setHeader('content-type','application/json');
     //req.setHeader('content-type','message/rfc822');
@@ -143,7 +150,12 @@ public string getmerelatedblurbs (Id recid, string category) {
     req.setBody(s);
     req.setEndpoint(categoryendpoint); 
     System.debug('Sending request...');
-    HttpResponse res = h.send(req);
+    if(Test.isRunningTest()){
+        res = mockApiCallouts.facebookpost();
+    }
+    else {
+    res = h.send(req);
+    }
     string body2 = res.getBody();
     System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');        
     system.debug('facebookpost response::'+body2);
@@ -178,6 +190,7 @@ public string getmerelatedblurbs (Id recid, string category) {
     string categoryendpoint = 'http://testenv.socxo.com/api/2.0/socialmedia/twitter/post';
     Http h = new Http();
     HttpRequest req = new HttpRequest();
+    HttpResponse res = new HttpResponse();
     req.setHeader('Accept','application/json');
     req.setHeader('content-type', 'application/json');
     req.setHeader('Authorization','Bearer '+currenttoken1[0].Access_Token__c);
@@ -185,7 +198,12 @@ public string getmerelatedblurbs (Id recid, string category) {
     req.setBody(s);
     req.setEndpoint(categoryendpoint); 
     System.debug('Sending request...');
-    HttpResponse res = h.send(req);
+    if(Test.isRunningTest()){
+        res = mockApiCallouts.twitterpost();
+    }
+    else {
+    res = h.send(req);
+    }
     string body2 = res.getBody();
     System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');        
     system.debug('body22222'+body2);
@@ -228,7 +246,7 @@ public string getmerelatedblurbs (Id recid, string category) {
     string categoryendpoint = 'http://testenv.socxo.com/api/2.0/socialmedia/linkedin/post';
     Http h = new Http();
     HttpRequest req = new HttpRequest();
-
+    HttpResponse res = new HttpResponse();
     req.setEndpoint(categoryendpoint);
     req.setHeader('Accept','application/json');
     req.setHeader('content-type', 'application/json');
@@ -236,7 +254,12 @@ public string getmerelatedblurbs (Id recid, string category) {
     req.setMethod('POST');
     req.setBody(s);
     System.debug('Sending request(linkedin)....');
-    HttpResponse res = h.send(req);
+    if(Test.isRunningTest()){
+        res = mockApiCallouts.linkedinPost();
+    }
+    else {
+    res = h.send(req);
+    }
     string body2 = res.getBody();
     System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');        
     system.debug('body22222'+body2);
@@ -301,8 +324,13 @@ public string getmerelatedblurbs (Id recid, string category) {
         req.setEndpoint(getToken);
         req.setMethod('POST');
         req.setHeader('Content-Type','application/json');
-        
-        HttpResponse res = h.send(req);
+        HttpResponse res = new HttpResponse();
+        if(Test.isRunningTest()){
+            res = mockApiCallouts.mockApiResultfetchLinkedinToken();
+        }
+        else{
+            res = h.send(req);
+        }
         string body = res.getBody();
         System.debug('linkedinbody('+res.getStatusCode()+''+ res.getStatus()+')');
         System.debug('linkedinbody:::'+body);
@@ -332,7 +360,13 @@ public string getmerelatedblurbs (Id recid, string category) {
     //req.setBody(s);
    req.setEndpoint(s); 
    System.debug('Sending request...');
-   HttpResponse res = h.send(req);
+   HttpResponse res;
+   if (Test.isRunningTest()){   
+      res =  mockApiCallouts.mockApiResultForgetmybody();
+   }
+   else{
+      res = h.send(req);
+   }
    string body2 = res.getBody();
    System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');        
    system.debug('mybody'+body2);
@@ -346,6 +380,7 @@ public string getmerelatedblurbs (Id recid, string category) {
         String endpoint = 'https://api.linkedin.com/v1/people/~:(id,email-address)?format=json&oauth2_access_token=' + accesstoken;
         Http h = new Http();
         HttpRequest req = new HttpRequest();
+        HttpResponse res = new HttpResponse();
         req.setHeader('content-type','application/json');
         req.setHeader('Accept','application/json');
         //req.setHeader('Authorization', 'Bearer ' +accesstoken);
@@ -353,7 +388,12 @@ public string getmerelatedblurbs (Id recid, string category) {
         //req.setBody(s);
         req.setEndpoint(endpoint); 
         System.debug('Sending request...');
-        HttpResponse res = h.send(req);
+        if(Test.isRunningTest()){
+            res = mockApiCallouts.mockApiResultGetLinkedinbody(); 
+        }
+        else{
+            res = h.send(req);
+        }
         string body2 = res.getBody();
         System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');        
         system.debug('mybody'+body2);
@@ -393,7 +433,13 @@ public string getmerelatedblurbs (Id recid, string category) {
     req.setBody(s);
     req.setEndpoint(connectendpoint); 
     System.debug('Sending request...');
-    HttpResponse res = h.send(req);
+     HttpResponse res =new HttpResponse();
+    if(Test.isRunningTest()){
+        res = mockApiCallouts.mockApiResultFbConnect();
+    }
+    else{
+        res = h.send(req);
+   }
     string body2 = res.getBody();
     System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');        
     system.debug('body22222'+body2);
@@ -477,9 +523,14 @@ public string getmerelatedblurbs (Id recid, string category) {
         req.setHeader('Authorization', 'Bearer ' +currenttoken1[0].Access_Token__c);
         req.setMethod('POST');
         req.setBody(s);
-        req.setEndpoint(connectendpoint); 
-        
-        HttpResponse res = h.send(req);
+        req.setEndpoint(connectendpoint);
+        HttpResponse res = new HttpResponse(); 
+        if(Test.isRunningTest()){
+            res = mockApiCallouts.mockApiResultLinkedinConnect();
+        }
+        else{
+            res = h.send(req);
+        }
         string body = res.getBody();
         System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');            
         return body;   
@@ -496,31 +547,46 @@ public string getmerelatedblurbs (Id recid, string category) {
     string categoryendpoint = 'http://testenv.socxo.com/api/2.0/invitation/externalinvite';
     Http h = new Http();
     HttpRequest req = new HttpRequest();
+    HttpResponse res = new HttpResponse();
     req.setHeader('content-type','application/json');
    // req.setHeader('content-type','message/rfc822');
     req.setHeader('Accept','application/json');
     req.setHeader('Authorization', 'Bearer ' +currenttoken1[0].Access_Token__c);
     req.setMethod('GET');
     req.setEndpoint(categoryendpoint);
+    /*URL currentURL = URL.getCurrentRequestUrl();
+    URL comparisonURL = new URL(URL.getSalesforceBaseUrl().toExternalForm() + Page.RegisterSocxo.getUrl());*/
+    String invitationUrl = System.Url.getSalesforceBaseUrl().toExternalForm();
+    system.debug('apiURL:::' + invitationUrl);
+    /*system.debug('currentURL:::'+ currentURL);
+    system.debug('comparisonURL:::'+ comparisonURL);
     wrapper wra = new wrapper();
     wra.InvitationUrl ='https://c.ap2.visual.force.com/apex/RegisterSocxo';
-    wra.CSVEmails=emailList;
+    wra.CSVEmails=emailList;*/
    // string bdy = JSON.Stringify(wra);
    // system.debug('bdy '+bdy);
-    string bdy ='{ "InvitationUrl": "https://c.ap2.visual.force.com/apex/RegisterSocxo", "CSVEmails": "'+emailList+'"}';  
+    //string bdy ='{ "InvitationUrl": "https://c.ap2.visual.force.com/apex/RegisterSocxo", "CSVEmails": "'+emailList+'"}';
+    string bdy ='{ "InvitationUrl": \"'+invitationUrl+'/apex/registersocxo\", "CSVEmails": "'+emailList+'"}';
+    system.debug('userinviteBody++++' + bdy)  ;
     req.setBody(bdy);
     System.debug('Sending request...');
-    HttpResponse res = h.send(req);
+    if(Test.isRunningTest()){
+      res = mockApiCallouts.sendInvite();
+    }
+    else{
+    res = h.send(req);
+  }
     string body2 = res.getBody();
     System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');
     system.debug('body22222'+body2);
     return body2;
     }
-   public class wrapper{
+
+  /* public class wrapper{
    public string InvitationUrl{get; set;}
    public string CSVEmails{get; set;}
 
-   }
+   }*/
    
    // User registration of already invited users
     public string userRegister(string email, string pwd, string fullname, string firstname) {
@@ -529,6 +595,7 @@ public string getmerelatedblurbs (Id recid, string category) {
     string categoryendpoint = 'http://testenv.socxo.com/api/2.0/account/register';
     Http h = new Http();
     HttpRequest req = new HttpRequest();
+    HttpResponse res = new HttpResponse();
     req.setHeader('content-type','application/json');
     //req.setHeader('content-type','message/rfc822');
     req.setHeader('Accept','application/json');
@@ -539,14 +606,19 @@ public string getmerelatedblurbs (Id recid, string category) {
     req.setBody(body);
     req.setTimeout(6000); 
     System.debug('Sending request...');
-    HttpResponse res = h.send(req);
+    if(Test.isRunningTest()){
+        res = mockApiCallouts.userRegister();
+    }
+    else{
+        res = h.send(req);
+    }
     string body2 = res.getBody();
-    registrationwrapper wra = new registrationwrapper();
+    /*registrationwrapper wra = new registrationwrapper();
     wra = (registrationwrapper)Json.deserialize(res.getBody(),registrationwrapper.class);
     System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');
     system.debug('body22222'+body2);
-    return String.valueof(wra.status);
-
+    return String.valueof(wra.status);*/
+    return body2;
 
     }
 
@@ -570,7 +642,14 @@ public string getmerelatedblurbs (Id recid, string category) {
     //req.setBody(body);
     req.setTimeout(6000); 
     System.debug('Sending request...');
-    HttpResponse res = h.send(req);
+    
+    HttpResponse res = new HttpResponse();
+    if (Test.isRunningTest()){      
+          res = mockApiCallouts.mockApiResultForGetAppsett();
+    }
+    else{
+          res = h.send(req);
+    }
     string body2 = res.getBody();
     socxoAppSettings wra = new socxoAppSettings();
     wra = (socxoAppSettings)Json.deserialize(res.getBody(),socxoAppSettings.class);
@@ -653,7 +732,7 @@ public string getmerelatedblurbs (Id recid, string category) {
     req.setBody(s);
     System.debug('Sending request(linkedin)....');
     if(Test.isRunningTest()){
-            res = TestCallouts.scheduletest();
+            res = mockApiCallouts.SchedulePost();
         }
     else{
         res = h.send(req);
@@ -666,13 +745,13 @@ public string getmerelatedblurbs (Id recid, string category) {
     
    } 
 
-public class registrationwrapper{
+/*public class registrationwrapper{
 
 public string errorId {get;set;}
 public string status {get;set;}
 public string message{get;set;}
 
-}
+}*/
 public class socxoAppSettings{
 
 public socxoAppkeys AppKeys {get;set;}

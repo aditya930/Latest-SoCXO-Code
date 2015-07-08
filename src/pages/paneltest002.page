@@ -510,7 +510,7 @@ font-family: 'Roboto', sans-serif;
                 </li>
             
                 <li class="logo hidden-xs">
-                   <a href="#"><img src="{!$Resource.socxoHeaderLogo}"/></a>
+                   <a href="#"><img src="http://socxo.com/wp-content/uploads/2014/12/socxo-logo3.png"/></a>
                 </li>
                 
                 <li class="pull-right">
@@ -1144,7 +1144,7 @@ font-family: 'Roboto', sans-serif;
                 <br/>
                 <br/>
                 <br/>
-                <apex:commandButton value="Connect to fb" onclick="window.open('/apex/FacebookConnector?status={!JSENCODE(fbstatus)}&blurbid={!xfb1}&ebid={!xfb2}', '_blank', 'toolbar=yes, scrollbars=yes, resizable=yes, top=300px, left=500px, width=600, height=300');" rerender="popup" oncomplete="window.close();" />
+                <apex:commandButton value="Connect to fb" onclick="window.open('/apex/facebookIntegrationPage?status={!JSENCODE(fbstatus)}&blurbid={!xfb1}&ebid={!xfb2}', '_blank', 'toolbar=yes, scrollbars=yes, resizable=yes, top=300px, left=500px, width=600, height=300');" rerender="popup" oncomplete="window.close();" />
                 <apex:commandButton value="Cancel" action="{!closePopup}" rerender="popup"  oncomplete="hidOverLay()"/>
             </apex:outputPanel>
         </apex:outputPanel>
@@ -1235,7 +1235,7 @@ font-family: 'Roboto', sans-serif;
                 <br/>
                 <br/>
                 <br/>
-                <apex:commandButton value="Connect to {!xfb3}" onclick="window.open('/apex/FacebookConnector?status={!JSENCODE(ScheduleStatus)}&blurbid={!xfb1}&ebid={!xfb2}', '_blank', 'toolbar=yes, scrollbars=yes, resizable=yes, top=300px, left=500px, width=400, height=200');" action="{!closePopup}" rerender="SchedulePopupFacebook" oncomplete="hidOverLay()" />
+                <apex:commandButton value="Connect to {!xfb3}" onclick="window.open('/apex/facebookIntegrationPage?status={!JSENCODE(ScheduleStatus)}&blurbid={!xfb1}&ebid={!xfb2}', '_blank', 'toolbar=yes, scrollbars=yes, resizable=yes, top=300px, left=500px, width=400, height=200');" action="{!closePopup}" rerender="SchedulePopupFacebook" oncomplete="hidOverLay()" />
                 <apex:commandButton value="Cancel" action="{!closePopup}" rerender="SchedulePopupFacebook" oncomplete="hidOverLay()"/>
             </apex:outputPanel>
         </apex:outputPanel>

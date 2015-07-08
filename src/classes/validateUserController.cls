@@ -15,7 +15,8 @@ public class validateUserController {
                // system.debug('SoCXO access token is null:::');
                  newpage = page.socxoLoginPage;
                
-               }  
+               }
+                
             else if(currenttoken[0].Access_Token__c!=null)
                {
                     if(currenttoken[0].expireson__c > datetime.now())
