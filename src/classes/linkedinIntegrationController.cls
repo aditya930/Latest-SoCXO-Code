@@ -1,4 +1,4 @@
-public class linkedinIntegrationController {
+public with sharing class linkedinIntegrationController {
 
     public String authCodeUrl {
         get;

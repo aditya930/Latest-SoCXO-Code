@@ -20,6 +20,8 @@ public class facebookIntegrationControllerTest {
          INSERT testSocxoToken;  
          //Testing Fbconnect method without 'code'             
          pagereference  resultPageRef = objFbInCont.fbconnect();
+         socxoApiHandler objsocxoApiHandler = new socxoApiHandler();
+         objsocxoApiHandler.getmefacebooktoken('1THKEVHF9vuNdhDcNzfUPGr_nCroMly3sUMpIsg0ITvXx7L14rUHIEzHzF3jroLB7P_v','true');
          //Adding 'code' value to the Url         
          ApexPages.currentPage().getParameters().put('code','1THKEVHF9vuNdhDcNzfUPGr_nCroMly3sUMpIsg0ITvXx7L14rUHIEzHzF3jroLB7P_v');  
          //Testing Fbconnect method with 'code'   

@@ -301,7 +301,13 @@ public string getmerelatedblurbs (Id recid, string category) {
     //req.setBody(s);
     req.setEndpoint(s); 
     System.debug('Sending request...');
-    HttpResponse res = h.send(req);
+    HttpResponse res = new HttpResponse();
+    if(Test.isRunningTest()){
+        res = mockApiCallouts.mockFbConnect();
+    }
+    else{
+        res = h.send(req);
+    }
     string body2 = res.getBody();
     System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');        
     system.debug('Facebook Token response'+body2);
@@ -489,7 +495,13 @@ public string getmerelatedblurbs (Id recid, string category) {
     req.setBody(s);
     req.setEndpoint(connectendpoint); 
     System.debug('Sending request...');
-    HttpResponse res = h.send(req);
+    HttpResponse res = new HttpResponse();
+    if(Test.isRunningTest()){
+        res = mockApiCallouts.mocktwitterConnect();
+    }
+    else{
+        res = h.send(req);
+    }
     string body2 = res.getBody();
     System.debug('Received response ('+res.getStatusCode()+' '+res.getStatus()+')');        
     system.debug('body22222'+body2);

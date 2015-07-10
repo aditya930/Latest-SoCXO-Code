@@ -1,6 +1,6 @@
 //controller for the SOCXO VF page.
 
-public class socxoLoginController
+public with sharing class socxoLoginController
 {
 //Variables and properties
  public String password   { get; set; }

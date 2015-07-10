@@ -7,5 +7,6 @@
     
     Successfully Connected to Twitter!
     Please go to the Blurb Page to post your blurbs!
-    <button onclick="redirect()">GO</button>
+    <!--<button onclick="redirect()">GO</button>-->
+    <button onclick="window.close();">GO</button>
 </apex:page>

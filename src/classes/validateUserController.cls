@@ -1,4 +1,4 @@
-public class validateUserController {
+public with sharing class validateUserController {
  
  public PageReference Redir() {
 
